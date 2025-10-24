@@ -3,30 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-
     <parent>
         <groupId>com.cv</groupId>
-        <artifactId>knowledge-parent</artifactId>  <!-- 注意这里必须和父包一致 -->
-        <version>1.0.0</version>
-        <!-- 由于是独立仓库，relativePath 可以指向本地父包路径或直接不写 -->
-        <!-- <relativePath>../knowledge-parent/pom.xml</relativePath> -->
+        <artifactId>code-gen-hub</artifactId>
+        <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>com.cv</groupId>
-    <artifactId>code-gen-hub</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <packaging>pom</packaging>
+    <artifactId>gen-v2</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
-    <modules>
-        <module>knowledge-generator</module>
-        <module>gen-v1</module>
-        <module>gen-v2</module>
-    </modules>
 
 </project>
