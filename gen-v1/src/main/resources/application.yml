@@ -1,0 +1,60 @@
+system:
+  os: mac   # 可选值: windows / linux / mac
+  # 输出路径：
+#  outputDir: E:\CodeAutoGenerate\251011\
+  outputDir: /Users/richtu/data/temp/code-generator-2025/251014/
+
+global-config:
+  project: xzl
+  author: xutu
+  version: v1
+  isSwagger: false
+  isSl4j: true
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/kb_auth?allowMultiQueries=true&autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    username: root
+    password: Win@2026!
+    # 待生成表名配置
+    tableNames: auth_permission,auth_role_permission
+    ignoreColumns: id,create_time,update_time,created_by,updated_by,is_deleted
+
+  # 包路径待调整
+  package-config:
+    # 针对框架的包路径配置，比如 Result/ErrorCodeEnum/BasePO 等等
+    base-framework:
+      parent-package: com.cv.boot
+      error-code: common.enums.ErrorCodeEnum
+      deleted-enum: common.enums.DeletedEnum
+      delete-ids-query: common.pojo.query.DeletedByIdListQuery
+      biz-exception: common.exception.BizException
+      result: web.response.Result
+      page-query: common.pojo.query.PageQuery
+      page-info: mybatisplus.pojo.vo.PageInfoVO
+      page-utils: mybatisplus.util.PageUtils
+
+    # 待生成包路径配置
+    parent: com.cv.kb.auth.rbac
+    controller: controller
+    service: service
+    serviceImpl: service.impl
+    mapper: mapper
+    convert: convert
+    entity: pojo.po
+    query: pojo.query
+    param: pojo.param
+    dto: pojo.dto
+    vo: pojo.vo
+    xml: resources.mapper.rbac
+    ignorePrefix: auth_  # 忽略表前缀
+    addSuffix: PO # 实体类后缀
+    entityExtendsClassPackage: com.cv.boot.mybatisplus.pojo.model.BasePO
+
+    # 实体类继承的父类，默认继承BasePO
+    entityExtendsClassName: BasePO
+    mapperExtendsClassPackage: com.baomidou.mybatisplus.core.mapper.BaseMapper
+    mapperExtendsClassName: BaseMapper
+    serviceExtendsClassPackage: com.baomidou.mybatisplus.extension.service.IService
+    serviceExtendsClassName: IService
+    serviceImplExtendsClassPackage: com.baomidou.mybatisplus.extension.service.impl.ServiceImpl
+    serviceImplExtendsClassName: ServiceImpl
+
