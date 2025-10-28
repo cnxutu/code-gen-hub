@@ -5,7 +5,6 @@
 package ${convertUrl};
 
 import ${paramUrl}.${entityName}AddParam;
-import ${paramUrl}.${entityName}EditParam;
 import ${entityUrl}.${entityName}PO;
 import ${dtoUrl}.${entityName}DTO;
 import ${voUrl}.${entityName}VO;
@@ -27,7 +26,6 @@ public interface ${entityName}Convert {
     //        Param -> PO
     // ==========================
     ${entityName}PO addParamToPO(${entityName}AddParam param);
-    ${entityName}PO editParamToPO(${entityName}EditParam param);
 
     // ==========================
     //        PO ⇄ DTO

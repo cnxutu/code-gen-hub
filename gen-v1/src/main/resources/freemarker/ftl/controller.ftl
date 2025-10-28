@@ -9,7 +9,6 @@ import ${frameworkPackage}.${frameworkDeletedEnum};
 import ${frameworkPackage}.${frameworkBizException};
 import ${entityUrl}.${entityName}${addSuffix};
 import ${paramUrl}.${entityName}AddParam;
-import ${paramUrl}.${entityName}EditParam;
 import ${queryUrl}.${entityName}PageQuery;
 import ${voUrl}.${entityName}PageVO;
 import ${voUrl}.${entityName}VO;
@@ -73,7 +72,7 @@ public class ${entityName}Controller {
      * @menu ${entityComment}管理
      **/
     @PostMapping("/edit")
-    public Result<Long> edit(@RequestBody @Validated ${entityName}EditParam param) {
+    public Result<Long> edit(@RequestBody @Validated ${entityName}AddOrEditParam param) {
         ${objectName}Service.edit(param);
         return Result.success(param.getId());
     }

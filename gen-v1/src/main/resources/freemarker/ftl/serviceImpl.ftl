@@ -14,7 +14,6 @@ import ${frameworkPackage}.${frameworkDeletedEnum};
 import ${frameworkPackage}.${frameworkBizException};
 import ${entityUrl}.${entityName}${addSuffix};
 import ${paramUrl}.${entityName}AddParam;
-import ${paramUrl}.${entityName}EditParam;
 import ${queryUrl}.${entityName}PageQuery;
 import ${voUrl}.${entityName}PageVO;
 import ${voUrl}.${entityName}VO;
@@ -86,10 +85,7 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void edit(${entityName}EditParam param) {
-        // 使用 MapStruct Convert 进行 EditParam -> PO 转换
-        ${entityName}PO po = ${objectName}Convert.editParamToPO(param);
-
+    public void edit(${entityName}AddOrEditParam param) {
         boolean b = updateById(po);
         if (!b) {
             throw new BizException(ErrorCodeEnum.OPERATION_FAIL);

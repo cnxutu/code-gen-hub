@@ -9,7 +9,6 @@ import ${serviceExtendsClassPackage};
 </#if>
 import ${entityUrl}.${entityName}${addSuffix};
 import ${paramUrl}.${entityName}AddParam;
-import ${paramUrl}.${entityName}EditParam;
 import ${queryUrl}.${entityName}PageQuery;
 import ${voUrl}.${entityName}PageVO;
 import ${voUrl}.${entityName}VO;
@@ -42,7 +41,7 @@ public interface I${entityName}Service <#if serviceExtendsClassName!="" >extends
      * @author ${author}
      * @date ${createTime}
      */
-    void edit(${entityName}EditParam param);
+    void edit(${entityName}AddOrEditParam param);
 
     /**
      * 删除

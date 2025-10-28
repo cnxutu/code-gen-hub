@@ -86,8 +86,6 @@ public class FreemarkerUtil {
             name = ".java";
         } else if ("AddParam.ftl".equals(name)) {
             name = ".java";
-        } else if ("EditParam.ftl".equals(name)) {
-            name = ".java";
         } else if ("PageQuery.ftl".equals(name)) {
             name = ".java";
         } else if ("dto.ftl".equals(name)) {

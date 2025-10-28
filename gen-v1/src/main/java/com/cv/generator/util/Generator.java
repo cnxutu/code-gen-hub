@@ -99,11 +99,6 @@ public class Generator {
         return FreemarkerUtil.createFile(bi, "AddParam.ftl", fileUrl);
     }
 
-    //⑦创建EditQuery
-    public static ResultJson createEditParam(String url, BasisInfo bi) {
-        String fileUrl = getGeneratorFileUrl(url, bi.getParamUrl(), bi.getEntityName() + "EditParam", PARAM);
-        return FreemarkerUtil.createFile(bi, "EditParam.ftl", fileUrl);
-    }
 
     //创建PageQuery
     public static ResultJson createPageQuery(String url, BasisInfo bi) {

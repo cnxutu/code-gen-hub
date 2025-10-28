@@ -53,7 +53,6 @@ public class CodeGeneratorApplicationTests {
                 String aa5 = Generator.createServiceImpl(fileUrl, bi).toString();
                 String aa6 = Generator.createController(fileUrl, bi).toString();
                 String aa7 = Generator.createAddParam(fileUrl, bi).toString();
-                String aa8 = Generator.createEditParam(fileUrl, bi).toString();
                 String aa9 = Generator.createPageQuery(fileUrl, bi).toString();
                 String aa10 = Generator.createPageVO(fileUrl, bi).toString();
                 String aa11 = Generator.createVO(fileUrl, bi).toString();
