@@ -127,7 +127,7 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     @Override
     public PageInfoVO<${entityName}PageVO> pageList(${entityName}PageQuery query) {
         Page page = new Page(query.getCurrent(), query.getSize());
-        Page pageList = ${objectName}Mapper.select${entityName}PageList(page, query);
+        Page<${entityName}PageVO> pageList = ${objectName}Mapper.select${entityName}PageList(page, query);
         return PageUtils.buildPage(pageList);
     }
 
