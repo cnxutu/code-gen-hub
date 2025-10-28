@@ -25,6 +25,16 @@ import java.util.List;
 public interface I${entityName}Service <#if serviceExtendsClassName!="" >extends ${serviceExtendsClassName}<${entityName}${addSuffix}></#if> {
 
     /**
+     * 分页
+     *
+     * @param query 入参
+     * @return 分页结果
+     * @author ${author}
+     * @date ${createTime}
+     */
+    PageInfoVO<${entityName}PageVO> pageList(${entityName}PageQuery query);
+
+    /**
      * 新增
      *
      * @param param {@link ${entityName}AddOrEditParam}
@@ -51,16 +61,6 @@ public interface I${entityName}Service <#if serviceExtendsClassName!="" >extends
      * @date ${createTime}
      */
     void delete(DeletedByIdListQuery query);
-
-    /**
-     * 分页
-     *
-     * @param query 入参
-     * @return 分页结果
-     * @author ${author}
-     * @date ${createTime}
-     */
-    PageInfoVO<${entityName}PageVO> pageList(${entityName}PageQuery query);
 
     /**
      * 详情

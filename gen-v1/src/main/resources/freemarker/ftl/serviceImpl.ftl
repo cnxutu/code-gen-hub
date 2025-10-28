@@ -54,6 +54,21 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     private ${entityName}Mapper ${objectName}Mapper;
 
     /**
+     * 分页列表
+     *
+     * @param query {@link }
+     * @return {@link PageInfoVO}
+     * @author ${author}
+     * @date ${createTime}
+     */
+    @Override
+    public PageInfoVO<${entityName}PageVO> pageList(${entityName}PageQuery query) {
+        Page page = new Page(query.getCurrent(), query.getSize());
+        Page pageList = ${objectName}Mapper.select${entityName}PageList(page, query);
+        return PageUtils.buildPage(pageList);
+    }
+
+    /**
     * 新增
     *
     * @param param {@link ${entityName}AddOrEditParam}
@@ -113,21 +128,6 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     }
 
     /**
-     * 分页列表
-     *
-     * @param query {@link }
-     * @return {@link PageInfoVO}
-     * @author ${author}
-     * @date ${createTime}
-     */
-    @Override
-    public PageInfoVO<${entityName}PageVO> pageList(${entityName}PageQuery query) {
-        Page page = new Page(query.getCurrent(), query.getSize());
-        Page pageList = ${objectName}Mapper.select${entityName}PageList(page, query);
-        return PageUtils.buildPage(pageList);
-    }
-
-    /**
      * 详情
      *
      * @param ${entityName?uncap_first}Id 主键id
@@ -139,7 +139,8 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     public ${entityName}VO detail(Long ${entityName?uncap_first}Id) {
         ${entityName}VO vo = new ${entityName}VO();
         ${entityName}${addSuffix} po = isExistById(${entityName?uncap_first}Id);
-        return BeanUtil.copyProperties(po, vo);
+        BeanUtil.copyProperties(po, vo)
+        return vo;
     }
 
     private ${entityName}${addSuffix} isExistById(Long ${entityName?uncap_first}Id) {
