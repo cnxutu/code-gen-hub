@@ -10,7 +10,7 @@
     <select id="select${entityName}PageList"
             resultType="${voUrl}.${entityName}PageVO">
         select
-        id,
+            id,
         <#list cis as ci>
             ${ci.column} AS ${ci.property}<#if ci_has_next>,</#if>
         </#list>
@@ -18,39 +18,39 @@
         ${table}
         <include refid="baseWhere"/>
         <#-- 单值条件 -->
-            <#if query??>
-                <if test="query.id != null">
-                    and id = \#{query.id}
-                </if>
+        <#if query??>
+            <if test="query.id != null">
+                and id = \#{query.id}
+            </if>
 
-                <if test="query.name != null and query.name != ''">
-                    and name like concat('%', \#{query.name}, '%')
-                </if>
+            <if test="query.name != null and query.name != ''">
+                and name like concat('%', \#{query.name}, '%')
+            </if>
 
-                <if test="query.createTimeStart != null">
-                    and create_time &gt;= \#{query.createTimeStart}
-                </if>
+            <if test="query.createTimeStart != null">
+                and create_time &gt;= \#{query.createTimeStart}
+            </if>
 
-                <if test="query.createTimeEnd != null">
-                    and create_time &lt;= \#{query.createTimeEnd}
-                </if>
+            <if test="query.createTimeEnd != null">
+                and create_time &lt;= \#{query.createTimeEnd}
+            </if>
 
-                <#-- 集合条件 -->
-                <if test="query.ids != null and query.ids.size() &gt; 0">
-                    and id in
-                    <foreach collection="query.ids" item="item" open="(" separator="," close=")">
-                        \#{item}
-                    </foreach>
-                </if>
+            <#-- 集合条件 -->
+            <if test="query.ids != null and query.ids.size() &gt; 0">
+                and id in
+                <foreach collection="query.ids" item="item" open="(" separator="," close=")">
+                    \#{item}
+                </foreach>
+            </if>
 
-                <#-- 自定义条件占位，可直接传 SQL 片段 -->
-                <if test="query.customCondition != null and query.customCondition != ''">
-                    and ${query.customCondition}
-                </if>
-            </#if>
+            <#-- 自定义条件占位，可直接传 SQL 片段 -->
+            <if test="query.customCondition != null and query.customCondition != ''">
+                and ${query.customCondition}
+            </if>
+        </#if>
 
-            <#-- 排序 -->
-            order by create_time desc
+        <#-- 排序 -->
+        order by create_time desc
 
     </select>
 
