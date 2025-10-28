@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
  * @date ${createTime}
  */
 @Data
-public class ${entityName}AddParam {
+public class ${entityName}AddOrEditParam {
 
 
 <#list cis as ci>

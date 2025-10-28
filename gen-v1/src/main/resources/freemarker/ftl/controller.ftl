@@ -8,7 +8,7 @@ import ${frameworkPackage}.${frameworkErrorCodeEnum};
 import ${frameworkPackage}.${frameworkDeletedEnum};
 import ${frameworkPackage}.${frameworkBizException};
 import ${entityUrl}.${entityName}${addSuffix};
-import ${paramUrl}.${entityName}AddParam;
+import ${paramUrl}.${entityName}AddOrEditParam;
 import ${queryUrl}.${entityName}PageQuery;
 import ${voUrl}.${entityName}PageVO;
 import ${voUrl}.${entityName}VO;
@@ -50,7 +50,7 @@ public class ${entityName}Controller {
     private I${entityName}Service ${objectName}Service;
 
     /**
-     * @param param {@link ${entityName}AddParam}
+     * @param param {@link ${entityName}AddOrEditParam}
      * @return {@link Result<Long>}
      * @author ${author}
      * @date ${createTime}
@@ -58,7 +58,7 @@ public class ${entityName}Controller {
      * @menu ${entityComment}管理
      **/
     @PostMapping("/add")
-    public Result<Long> add(@RequestBody @Validated ${entityName}AddParam param) {
+    public Result<Long> add(@RequestBody @Validated ${entityName}AddOrEditParam param) {
         Long id = ${objectName}Service.add(param);
         return Result.success(id);
     }

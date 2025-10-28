@@ -8,12 +8,11 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import ${convertUrl}.${entityName}Convert;
 import ${frameworkPackage}.${frameworkErrorCodeEnum};
 import ${frameworkPackage}.${frameworkDeletedEnum};
 import ${frameworkPackage}.${frameworkBizException};
 import ${entityUrl}.${entityName}${addSuffix};
-import ${paramUrl}.${entityName}AddParam;
+import ${paramUrl}.${entityName}AddOrEditParam;
 import ${queryUrl}.${entityName}PageQuery;
 import ${voUrl}.${entityName}PageVO;
 import ${voUrl}.${entityName}VO;
@@ -59,15 +58,14 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     /**
     * 新增
     *
-    * @param param {@link ${entityName}AddParam}
+    * @param param {@link ${entityName}AddOrEditParam}
     * @author ${author}
     * @date ${createTime}
     */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Long add(${entityName}AddParam param) {
-        // 使用 MapStruct Convert 进行 Param -> PO 转换
-        ${entityName}PO po = ${objectName}Convert.addParamToPO(param);
+    public Long add(${entityName}AddOrEditParam param) {
+        // 使用 hutool BeanUtil 进行 Param -> PO 转换
 
         int i = ${objectName}Mapper.insert(po);
         if (i <= 0) {

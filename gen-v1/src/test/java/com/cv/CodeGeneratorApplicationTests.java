@@ -52,7 +52,7 @@ public class CodeGeneratorApplicationTests {
                 String aa4 = Generator.createService(fileUrl, bi).toString();
                 String aa5 = Generator.createServiceImpl(fileUrl, bi).toString();
                 String aa6 = Generator.createController(fileUrl, bi).toString();
-                String aa7 = Generator.createAddParam(fileUrl, bi).toString();
+                String aa7 = Generator.createAddOrEditParam(fileUrl, bi).toString();
                 String aa9 = Generator.createPageQuery(fileUrl, bi).toString();
                 String aa10 = Generator.createPageVO(fileUrl, bi).toString();
                 String aa11 = Generator.createVO(fileUrl, bi).toString();
@@ -68,7 +68,6 @@ public class CodeGeneratorApplicationTests {
                 System.out.println(aa5);
                 System.out.println(aa6);
                 System.out.println(aa7);
-                System.out.println(aa8);
                 System.out.println(aa9);
                 System.out.println(aa10);
                 System.out.println(aa11);
