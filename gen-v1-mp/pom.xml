@@ -9,7 +9,7 @@
         <version>1.0.0</version>
     </parent>
 
-    <artifactId>gen-v1</artifactId>
+    <artifactId>gen-v1-mp</artifactId>
 
     <properties>
         <!-- 编码设置 -->

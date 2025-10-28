@@ -25,8 +25,8 @@
 
     <modules>
         <module>knowledge-generator</module>
-        <module>gen-v1</module>
-        <module>gen-v2</module>
+        <module>gen-v1-mp</module>
+        <module>gen-v2-tk</module>
     </modules>
 
 </project>
