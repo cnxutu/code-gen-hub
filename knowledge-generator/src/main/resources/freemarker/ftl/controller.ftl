@@ -104,7 +104,7 @@ public class ${entityName}Controller {
      * @menu ${entityComment}管理
      **/
     @GetMapping("/detail/{${entityName?uncap_first}Id}")
-    public Result detail(@PathVariable("${entityName?uncap_first}Id") Long ${entityName?uncap_first}Id) {
+    public Result<${entityName}VO> detail(@PathVariable("${entityName?uncap_first}Id") Long ${entityName?uncap_first}Id) {
         return Result.success(${objectName}Service.detail(${entityName?uncap_first}Id));
     }
 
