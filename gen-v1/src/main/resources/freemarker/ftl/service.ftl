@@ -37,7 +37,7 @@ public interface I${entityName}Service <#if serviceExtendsClassName!="" >extends
     /**
      * 编辑
      *
-     * @param param {@link ${entityName}EditParam}
+     * @param param {@link ${entityName}AddOrEditParam}
      * @author ${author}
      * @date ${createTime}
      */

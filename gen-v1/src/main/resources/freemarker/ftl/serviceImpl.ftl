@@ -4,6 +4,7 @@
  */
 package ${serviceImplUrl};
 
+import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
@@ -52,9 +53,6 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     @Resource
     private ${entityName}Mapper ${objectName}Mapper;
 
-    @Resource
-    private ${entityName}Convert ${objectName}Convert;
-
     /**
     * 新增
     *
@@ -66,7 +64,8 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     @Transactional(rollbackFor = Exception.class)
     public Long add(${entityName}AddOrEditParam param) {
         // 使用 hutool BeanUtil 进行 Param -> PO 转换
-
+        ${entityName}${addSuffix} po = new ${entityName}${addSuffix}();
+        BeanUtil.copyProperties(param, po);
         int i = ${objectName}Mapper.insert(po);
         if (i <= 0) {
             throw new BizException(ErrorCodeEnum.OPERATION_FAIL);
@@ -77,13 +76,16 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     /**
     * 编辑
     *
-    * @param param {@link ${entityName}EditParam}
+    * @param param {@link ${entityName}AddOrEditParam}
     * @author ${author}
     * @date ${createTime}
     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void edit(${entityName}AddOrEditParam param) {
+        // 使用 hutool BeanUtil 进行 Param -> PO 转换
+        ${entityName}${addSuffix} po = new ${entityName}${addSuffix}();
+        BeanUtil.copyProperties(param, po);
         boolean b = updateById(po);
         if (!b) {
             throw new BizException(ErrorCodeEnum.OPERATION_FAIL);
@@ -100,7 +102,7 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     @Override
     @Transactional(rollbackFor = Exception.class)
     public void delete(DeletedByIdListQuery query) {
-        ${entityName}${addSuffix} po=new ${entityName}${addSuffix}();
+        ${entityName}${addSuffix} po = new ${entityName}${addSuffix}();
         po.setIsDeleted(DeletedEnum.DELETED.getCode());
         boolean b = update(po, new UpdateWrapper<${entityName}${addSuffix}>()
                 .in("id", query.getIdList())
@@ -135,8 +137,9 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
      */
     @Override
     public ${entityName}VO detail(Long ${entityName?uncap_first}Id) {
+        ${entityName}VO vo = new ${entityName}VO();
         ${entityName}${addSuffix} po = isExistById(${entityName?uncap_first}Id);
-        return ${objectName}Convert.poToVODirect(po);
+        return BeanUtil.copyProperties(po, vo);
     }
 
     private ${entityName}${addSuffix} isExistById(Long ${entityName?uncap_first}Id) {

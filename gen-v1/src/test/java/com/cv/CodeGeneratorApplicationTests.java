@@ -57,7 +57,7 @@ public class CodeGeneratorApplicationTests {
                 String aa10 = Generator.createPageVO(fileUrl, bi).toString();
                 String aa11 = Generator.createVO(fileUrl, bi).toString();
                 String aa12 = Generator.createDto(fileUrl, bi).toString();
-                String aa13 = Generator.createConvert(fileUrl, bi).toString();
+//                String aa13 = Generator.createConvert(fileUrl, bi).toString();
                 // 是否创建swagger配置文件
 //                String aa7 = Generator.createSwaggerConfig(fileUrl, bi).toString();
 
@@ -72,7 +72,7 @@ public class CodeGeneratorApplicationTests {
                 System.out.println(aa10);
                 System.out.println(aa11);
                 System.out.println(aa12);
-                System.out.println(aa13);
+//                System.out.println(aa13);
 
                 //System.out.println(aa7);
             } catch (SQLException e) {

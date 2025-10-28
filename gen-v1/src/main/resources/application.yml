@@ -1,8 +1,8 @@
 system:
   os: mac   # 可选值: windows / linux / mac
   # 输出路径：
-#  outputDir: E:\CodeAutoGenerate\251011\
-  outputDir: /Users/richtu/data/temp/code-generator-2025/251028/
+  #  outputDir: E:\CodeAutoGenerate\251011\
+  outputDir: /Users/richtu/data/temp/code-generator-2025/25102802/
 
 global-config:
   project: xzl
@@ -11,11 +11,11 @@ global-config:
   isSwagger: false
   isSl4j: true
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/kb_auth?allowMultiQueries=true&autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/solution-hub?allowMultiQueries=true&autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false
     username: root
     password: Win@2026!
     # 待生成表名配置
-    tableNames: auth_permission,auth_role_permission
+    tableNames: sys_dict_type,sys_dict_item
     ignoreColumns: id,create_time,update_time,created_by,updated_by,is_deleted
 
   # 包路径待调整
@@ -33,7 +33,7 @@ global-config:
       page-utils: mybatisplus.util.PageUtils
 
     # 待生成包路径配置
-    parent: com.cv.kb.auth.rbac
+    parent: com.cv.solution.formdict.dict
     controller: controller
     service: service
     serviceImpl: service.impl

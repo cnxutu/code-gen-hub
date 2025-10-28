@@ -64,7 +64,7 @@ public class ${entityName}Controller {
     }
 
     /**
-     * @param param {@link ${entityName}EditParam}
+     * @param param {@link ${entityName}AddOrEditParam}
      * @return {@link Result<Long>}
      * @author ${author}
      * @date ${createTime}

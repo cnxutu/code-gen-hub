@@ -20,6 +20,10 @@ import java.time.LocalDateTime;
 @Data
 public class ${entityName}AddOrEditParam {
 
+    /**
+     * 主键 id
+     */
+    private Long id;
 
 <#list cis as ci>
     /**
