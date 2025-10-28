@@ -10,6 +10,7 @@
     <select id="select${entityName}PageList"
             resultType="${voUrl}.${entityName}PageVO">
         select
+        id,
         <#list cis as ci>
             ${ci.column} AS ${ci.property}<#if ci_has_next>,</#if>
         </#list>
