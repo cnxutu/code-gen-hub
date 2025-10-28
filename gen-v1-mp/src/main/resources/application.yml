@@ -2,7 +2,7 @@ system:
   os: mac   # 可选值: windows / linux / mac
   # 输出路径：
   #  outputDir: E:\CodeAutoGenerate\251011\
-  outputDir: /Users/richtu/data/temp/code-generator-2025/25102803/
+  outputDir: /Users/richtu/data/temp/code-generator-2025/25102806/
 
 global-config:
   project: xzl
