@@ -50,6 +50,20 @@ public class ${entityName}Controller {
     private I${entityName}Service ${objectName}Service;
 
     /**
+     * @param query {@link }
+     * @return {@link Result<PageInfoVO>}
+     * @author ${author}
+     * @date ${createTime}
+     * @description 分页列表
+     * @menu ${entityComment}管理
+     **/
+    @RequestMapping(value = "/pageList", method = RequestMethod.POST)
+    public Result<PageInfoVO<${entityName}PageVO>> pageList(@RequestBody ${entityName}PageQuery query) {
+        PageInfoVO vo = ${objectName}Service.pageList(query);
+        return Result.success(vo);
+    }
+
+    /**
      * @param param {@link ${entityName}AddOrEditParam}
      * @return {@link Result<Long>}
      * @author ${author}
@@ -105,20 +119,6 @@ public class ${entityName}Controller {
     @GetMapping("/detail/{${entityName?uncap_first}Id}")
     public Result<${entityName}VO> detail(@PathVariable("${entityName?uncap_first}Id") Long ${entityName?uncap_first}Id) {
         return Result.success(${objectName}Service.detail(${entityName?uncap_first}Id));
-    }
-
-    /**
-     * @param query {@link }
-     * @return {@link Result<PageInfoVO>}
-     * @author ${author}
-     * @date ${createTime}
-     * @description 分页列表
-     * @menu ${entityComment}管理
-     **/
-    @RequestMapping(value = "/pageList", method = RequestMethod.POST)
-    public Result<PageInfoVO<${entityName}PageVO>> pageList(@RequestBody ${entityName}PageQuery query) {
-        PageInfoVO vo = ${objectName}Service.pageList(query);
-        return Result.success(vo);
     }
 
 }

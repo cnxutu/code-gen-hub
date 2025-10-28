@@ -50,6 +50,21 @@ public class ${entityName}Controller {
     @Resource
     private I${entityName}Service ${objectName}Service;
 
+
+     /**
+     * @param query {@link }
+     * @return {@link Result<PageInfoVO>}
+     * @author ${author}
+     * @date ${createTime}
+     * @description 分页列表
+     * @menu ${entityComment}管理
+     **/
+    @RequestMapping(value = "/pageList", method = RequestMethod.POST)
+    public Result<PageInfoVO<${entityName}PageVO>> pageList(@RequestBody ${entityName}PageQuery query) {
+        PageInfoVO vo = ${objectName}Service.pageList(query);
+        return Result.success(vo);
+    }
+
     /**
      * @param param {@link ${entityName}AddParam}
      * @return {@link Result<Long>}
@@ -108,18 +123,5 @@ public class ${entityName}Controller {
         return Result.success(${objectName}Service.detail(${entityName?uncap_first}Id));
     }
 
-    /**
-     * @param query {@link }
-     * @return {@link Result<PageInfoVO>}
-     * @author ${author}
-     * @date ${createTime}
-     * @description 分页列表
-     * @menu ${entityComment}管理
-     **/
-    @RequestMapping(value = "/pageList", method = RequestMethod.POST)
-    public Result<PageInfoVO<${entityName}PageVO>> pageList(@RequestBody ${entityName}PageQuery query) {
-        PageInfoVO vo = ${objectName}Service.pageList(query);
-        return Result.success(vo);
-    }
 
 }
