@@ -2,7 +2,7 @@ system:
   os: mac   # 可选值: windows / linux / mac
   # 输出路径：
   #  outputDir: E:\CodeAutoGenerate\251011\
-  outputDir: /Users/richtu/data/temp/code-generator-2025/25102806/
+  outputDir: /Users/richtu/data/temp/code-generator-2025/25102806/01/
 
 global-config:
   project: xzl
@@ -15,7 +15,7 @@ global-config:
     username: root
     password: Win@2026!
     # 待生成表名配置
-    tableNames: sys_dict_type,sys_dict_item
+    tableNames: tpl_template,tpl_template_field,tpl_template_field_option,tpl_template_data
     ignoreColumns: id,create_time,update_time,created_by,updated_by,is_deleted
 
   # 包路径待调整
@@ -33,7 +33,7 @@ global-config:
       page-utils: mybatisplus.util.PageUtils
 
     # 待生成包路径配置
-    parent: com.cv.solution.formdict.dict
+    parent: com.cv.solution.formdict.form
     controller: controller
     service: service
     serviceImpl: service.impl

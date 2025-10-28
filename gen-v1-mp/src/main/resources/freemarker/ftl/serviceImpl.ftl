@@ -139,7 +139,7 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     public ${entityName}VO detail(Long ${entityName?uncap_first}Id) {
         ${entityName}VO vo = new ${entityName}VO();
         ${entityName}${addSuffix} po = isExistById(${entityName?uncap_first}Id);
-        BeanUtil.copyProperties(po, vo)
+        BeanUtil.copyProperties(po, vo);
         return vo;
     }
 
