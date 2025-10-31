@@ -2,7 +2,7 @@ system:
   os: mac   # 可选值: windows / linux / mac
   # 输出路径：
   #  outputDir: E:\CodeAutoGenerate\251011\
-  outputDir: /Users/richtu/data/temp/code-generator-2025/25102806/01/
+  outputDir: /Users/richtu/data/temp/code-generator-2025/251030/01/
 
 global-config:
   project: xzl
@@ -15,8 +15,11 @@ global-config:
     username: root
     password: Win@2026!
     # 待生成表名配置
-    tableNames: tpl_template,tpl_template_field,tpl_template_field_option,tpl_template_data
+    tableNames: tpl_template_field,tpl_template_data
     ignoreColumns: id,create_time,update_time,created_by,updated_by,is_deleted
+
+  # 包路径待调整
+  package-config:
     # 待生成包路径配置
     parent: com.cv.solution.formdict.form
     controller: controller
@@ -32,9 +35,9 @@ global-config:
     xml: resources.mapper.rbac
     ignorePrefix: tpl_  # 忽略表前缀
     addSuffix: PO # 实体类后缀
-    entityExtendsClassPackage: com.cv.boot.mybatisplus.pojo.model.BasePO
 
     # 实体类继承的父类，默认继承BasePO
+    entityExtendsClassPackage: com.cv.boot.mybatisplus.pojo.model.BasePO
     entityExtendsClassName: BasePO
     mapperExtendsClassPackage: com.baomidou.mybatisplus.core.mapper.BaseMapper
     mapperExtendsClassName: BaseMapper
@@ -43,8 +46,6 @@ global-config:
     serviceImplExtendsClassPackage: com.baomidou.mybatisplus.extension.service.impl.ServiceImpl
     serviceImplExtendsClassName: ServiceImpl
 
-  # 包路径待调整
-  package-config:
     # 针对框架的包路径配置，比如 Result/ErrorCodeEnum/BasePO 等等
     base-framework:
       parent-package: com.cv.boot
