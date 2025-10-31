@@ -94,9 +94,9 @@ public class Generator {
     }
 
     //⑦创建AddQuery
-    public static ResultJson createAddOrEditParam(String url, BasisInfo bi) {
-        String fileUrl = getGeneratorFileUrl(url, bi.getParamUrl(), bi.getEntityName() + "AddOrEditParam", PARAM);
-        return FreemarkerUtil.createFile(bi, "AddOrEditParam.ftl", fileUrl);
+    public static ResultJson createParam(String url, BasisInfo bi) {
+        String fileUrl = getGeneratorFileUrl(url, bi.getParamUrl(), bi.getEntityName() + "Param", PARAM);
+        return FreemarkerUtil.createFile(bi, "Param.ftl", fileUrl);
     }
 
 

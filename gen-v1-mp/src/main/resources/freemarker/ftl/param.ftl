@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
  * @date ${createTime}
  */
 @Data
-public class ${entityName}AddOrEditParam {
+public class ${entityName}Param {
 
     /**
      * 主键 id

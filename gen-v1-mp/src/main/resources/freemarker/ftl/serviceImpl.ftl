@@ -13,7 +13,7 @@ import ${frameworkPackage}.${frameworkErrorCodeEnum};
 import ${frameworkPackage}.${frameworkDeletedEnum};
 import ${frameworkPackage}.${frameworkBizException};
 import ${entityUrl}.${entityName}${addSuffix};
-import ${paramUrl}.${entityName}AddOrEditParam;
+import ${paramUrl}.${entityName}Param;
 import ${queryUrl}.${entityName}PageQuery;
 import ${voUrl}.${entityName}PageVO;
 import ${voUrl}.${entityName}VO;
@@ -71,13 +71,13 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     /**
     * 新增
     *
-    * @param param {@link ${entityName}AddOrEditParam}
+    * @param param {@link ${entityName}Param}
     * @author ${author}
     * @date ${createTime}
     */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public Long add(${entityName}AddOrEditParam param) {
+    public Long add(${entityName}Param param) {
         // 使用 hutool BeanUtil 进行 Param -> PO 转换
         ${entityName}${addSuffix} po = new ${entityName}${addSuffix}();
         BeanUtil.copyProperties(param, po);
@@ -91,13 +91,13 @@ public class ${entityName}ServiceImpl <#if serviceImplExtendsClassName!="" >exte
     /**
     * 编辑
     *
-    * @param param {@link ${entityName}AddOrEditParam}
+    * @param param {@link ${entityName}Param}
     * @author ${author}
     * @date ${createTime}
     */
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public void edit(${entityName}AddOrEditParam param) {
+    public void edit(${entityName}Param param) {
         // 使用 hutool BeanUtil 进行 Param -> PO 转换
         ${entityName}${addSuffix} po = new ${entityName}${addSuffix}();
         BeanUtil.copyProperties(param, po);

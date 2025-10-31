@@ -8,7 +8,7 @@ import ${frameworkPackage}.${frameworkErrorCodeEnum};
 import ${frameworkPackage}.${frameworkDeletedEnum};
 import ${frameworkPackage}.${frameworkBizException};
 import ${entityUrl}.${entityName}${addSuffix};
-import ${paramUrl}.${entityName}AddOrEditParam;
+import ${paramUrl}.${entityName}Param;
 import ${queryUrl}.${entityName}PageQuery;
 import ${voUrl}.${entityName}PageVO;
 import ${voUrl}.${entityName}VO;
@@ -64,7 +64,7 @@ public class ${entityName}Controller {
     }
 
     /**
-     * @param param {@link ${entityName}AddOrEditParam}
+     * @param param {@link ${entityName}Param}
      * @return {@link Result<Long>}
      * @author ${author}
      * @date ${createTime}
@@ -72,13 +72,13 @@ public class ${entityName}Controller {
      * @menu ${entityComment}管理
      **/
     @PostMapping("/add")
-    public Result<Long> add(@RequestBody @Validated ${entityName}AddOrEditParam param) {
+    public Result<Long> add(@RequestBody @Validated ${entityName}Param param) {
         Long id = ${objectName}Service.add(param);
         return Result.success(id);
     }
 
     /**
-     * @param param {@link ${entityName}AddOrEditParam}
+     * @param param {@link ${entityName}Param}
      * @return {@link Result<Long>}
      * @author ${author}
      * @date ${createTime}
@@ -86,7 +86,7 @@ public class ${entityName}Controller {
      * @menu ${entityComment}管理
      **/
     @PostMapping("/edit")
-    public Result<Long> edit(@RequestBody @Validated ${entityName}AddOrEditParam param) {
+    public Result<Long> edit(@RequestBody @Validated ${entityName}Param param) {
         ${objectName}Service.edit(param);
         return Result.success(param.getId());
     }

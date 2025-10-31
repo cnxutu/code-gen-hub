@@ -8,7 +8,7 @@ package ${serviceUrl};
 import ${serviceExtendsClassPackage};
 </#if>
 import ${entityUrl}.${entityName}${addSuffix};
-import ${paramUrl}.${entityName}AddOrEditParam;
+import ${paramUrl}.${entityName}Param;
 import ${queryUrl}.${entityName}PageQuery;
 import ${voUrl}.${entityName}PageVO;
 import ${voUrl}.${entityName}VO;
@@ -37,21 +37,21 @@ public interface I${entityName}Service <#if serviceExtendsClassName!="" >extends
     /**
      * 新增
      *
-     * @param param {@link ${entityName}AddOrEditParam}
+     * @param param {@link ${entityName}Param}
      * @return id
      * @author ${author}
      * @date ${createTime}
      */
-    Long add(${entityName}AddOrEditParam param);
+    Long add(${entityName}Param param);
 
     /**
      * 编辑
      *
-     * @param param {@link ${entityName}AddOrEditParam}
+     * @param param {@link ${entityName}Param}
      * @author ${author}
      * @date ${createTime}
      */
-    void edit(${entityName}AddOrEditParam param);
+    void edit(${entityName}Param param);
 
     /**
      * 删除

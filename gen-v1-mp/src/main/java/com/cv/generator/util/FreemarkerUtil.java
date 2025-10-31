@@ -84,7 +84,7 @@ public class FreemarkerUtil {
     public static String messageStr(String name) {
         if ("entity.ftl".equals(name)) {
             name = ".java";
-        } else if ("AddOrEditParam.ftl".equals(name)) {
+        } else if ("param.ftl".equals(name)) {
             name = ".java";
         } else if ("PageQuery.ftl".equals(name)) {
             name = ".java";
